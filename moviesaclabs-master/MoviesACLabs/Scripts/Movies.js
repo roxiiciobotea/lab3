@@ -18,3 +18,5 @@ $("body").on("click", ".deleteButton", function (event) {
     var toDelete = event.currentTarget.closest("li");
     toDelete.remove();
 });
+
+//to add one more button who adds to the list the elements from "swagger" server (with get - ajax)
