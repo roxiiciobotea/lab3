@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html  ng-app="main" >
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="Scripts/LAB_4.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+    <div id="TDO">
+        <!-- input field, add button
+            list with x button & checkbox
+            down: number of elements in the list, 3 tabs: all, active, completed
+            clear input-->
+
+        <input type="text" ng-model="crtTask"/>
+        <button ng-click="addTask()">Add task</button>
+
+        <ul style="list-style: none;">
+            <li ng-repeat="task in allTasks"><input type="checkbox"/>{{task}} <button ng-click="remove(task.index))">X</button></li>
+        </ul>
+
+        <p>{{numberOfTasks}} Task(s)</p>
+        <button>All Tasks</button>
+        <button>Active Tasks</button>
+        <button>Done Tasks</button>
+    </div>
+</body>
+</html>
