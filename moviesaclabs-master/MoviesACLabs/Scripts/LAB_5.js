@@ -75,9 +75,6 @@ app.service("ActorsService", function ($http) {
         $scope.actor.Name = name;
         $scope.actor.DateOfBirth = date;
         $scope.actor.Revenue = revenue;
-    };
-    $scope.editExistingActor = function () {
-
 
         $scope.actorToEdit = {
             Id: id,
@@ -85,6 +82,8 @@ app.service("ActorsService", function ($http) {
             DateOfBirth: date,
             Revenue: revenue
         };
+    };
+    $scope.editExistingActor = function () {
         ActorsService.editActor($scope.actorToEdit.id, $scope.actorToEdit).then(function () {
             ActorsService.getActors().then(function (dataResponse) {
                 $scope.actorsList = dataResponse;
