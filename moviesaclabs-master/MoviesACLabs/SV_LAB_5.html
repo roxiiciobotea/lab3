@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="movies">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="Scripts/LAB_5.js"></script>
+</head>
+<body ng-controller="ActorsCtrl">
+
+    Name: <input type="text" ng-model="actor.Name"/> <br />
+    Date of birth: <input type="text" ng-model="actor.DateOfBirth" /><br />
+    Revenue: <input type="text" ng-model="actor.Revenue" /><br />
+    <button ng-click="addNewActor()">Add actor</button>
+    <button ng-click="editExistingActor()">Edit actor</button>
+
+    <br />
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date of birth</th>
+            <th>Revenue</th>
+        </thead>
+
+        <tr ng-repeat="actor in actorsList.data" ng-click="autocomplete(actor.Id, actor.Name, actor.DateOfBirth, actor.Revenue)">
+            <td>{{actor.Id}}</td>
+            <td>{{actor.Name}}</td>
+            <td>{{actor.DateOfBirth}}</td>
+            <td>{{actor.Revenue}}</td>
+        </tr>
+    </table>
+
+    <br />
+
+    Enter Actor ID: <input type="text" ng-model="deleteID" />
+    <button ng-click="delAct()">Delete actor</button>
+</body>
+</html>

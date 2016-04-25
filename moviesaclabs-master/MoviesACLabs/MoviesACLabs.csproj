@@ -103,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\LAB_5.js" />
+    <Content Include="SV_LAB_5.html" />
     <Content Include="Scripts\LAB_4.js" />
     <Content Include="SV_LAB_4.html" />
     <Content Include="Index.html" />
