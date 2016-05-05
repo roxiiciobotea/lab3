@@ -14,7 +14,7 @@
     <button ng-click="addNewActor()">Add actor</button>
     <button ng-click="editExistingActor()">Edit actor</button>
 
-    <br />
+    <br /><br />
 
     <table>
         <thead>
@@ -32,9 +32,25 @@
         </tr>
     </table>
 
-    <br />
+    Number of actors: {{actorsCount}}
+
+    <br /><br />
 
     Enter Actor ID: <input type="text" ng-model="deleteID" />
     <button ng-click="delAct()">Delete actor</button>
+
+    <br /><br />
+
+    Search Actors by ID: <input type="text" ng-model="searchID" />
+    <button ng-click="searchAct()">Search</button>
+
+    <br />    
+    <table>
+        <tr>
+            <td>{{foundActor.data.Name}}</td>
+            <td>{{foundActor.data.DateOfBirth}}</td>
+            <td>{{foundActor.data.Revenue}}</td>
+        </tr>
+    </table>
 </body>
 </html>
