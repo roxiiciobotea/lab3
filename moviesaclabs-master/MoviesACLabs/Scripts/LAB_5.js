@@ -87,7 +87,7 @@ app.controller('ActorsCtrl', function ($scope, ActorsService) {
         });
     };
 
-    //updating an entry - not working, it says bad request
+    //updating an entry
     $scope.editID;
     $scope.autocomplete = function (id, name, date, revenue) {
         $scope.editID = id;
