@@ -12,6 +12,7 @@ using MoviesACLabs.Data;
 using MoviesACLabs.Models;
 using AutoMapper;
 using MoviesACLabs.Entities;
+using System.Collections;
 
 namespace MoviesACLabs.Controllers
 {
@@ -26,7 +27,7 @@ namespace MoviesACLabs.Controllers
             var actorsModel = Mapper.Map<IList<ActorModel>>(actors);
             return actorsModel;
         }
-        
+
         // GET: api/Actors/5
         [ResponseType(typeof(ActorModel))]
         public IHttpActionResult GetActor(int id)
@@ -109,6 +110,27 @@ namespace MoviesACLabs.Controllers
             db.SaveChanges();
 
             return Ok();
+        }
+
+        // get actor & awards
+        [Route("actorsWithAwards")]
+        public IHttpActionResult GetActorAwards()
+        {
+            //only displays the actors that have awards
+            //TDO:
+            //display each actor and an award for it
+            //the award displayed must be the one with the longest name
+
+            var actorsWithAwards = db.Actors.Where(actor => actor.Awards.Any()).ToList();
+
+            if (actorsWithAwards == null)
+            {
+                return NotFound();
+            }
+
+            var actorsModel = Mapper.Map<IList<ActorModel>>(actorsWithAwards);
+
+            return Ok(actorsModel);
         }
 
         protected override void Dispose(bool disposing)
