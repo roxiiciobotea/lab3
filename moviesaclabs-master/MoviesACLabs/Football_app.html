@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html ng-app="football">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="Scripts/Football_script.js"></script>
+</head>
+<body ng-controller="FootballCtrl">
+    <h3>Football Players</h3>
+
+    Name: <input type="text" ng-model="footballPlayer.Name" /> <br />
+    Age: <input type="text" ng-model="footballPlayer.Age" /><br />
+    Goals Scored: <input type="text" ng-model="footballPlayer.GoalsScored" /><br />
+    <button ng-click="addNewFootballPlayer()">Add</button>
+    <button ng-click="editExistingFootballPlayer()">Edit</button>
+
+    <br /><br />
+
+    <table>
+        <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Goals Scored</th>
+        </thead>
+
+        <tr ng-repeat="player in footballPlayersList.data" ng-click="autocompleteFP(player.Id, player.Name, player.Age, player.GoalsScored)">
+            <td>{{player.Id}}</td>
+            <td>{{player.Name}}</td>
+            <td>{{player.Age}}</td>
+            <td>{{player.GoalsScored}}</td>
+        </tr>
+    </table>
+
+    <br /><br />
+
+    Enter Football Player ID: <input type="text" ng-model="deleteFPID" />
+    <button ng-click="delFP()">Delete</button>
+
+    <br /><br />
+
+    <h3>Football Clubs</h3>
+
+    Name: <input type="text" ng-model="footballClub.Name" /> <br />
+    Country: <input type="text" ng-model="footballClub.Age" /><br />
+    <button ng-click="addNewFootballClub()">Add</button>
+    <button ng-click="editExistingFootballClub()">Edit</button>
+
+    <br /><br />
+
+    <table>
+        <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Country</th>
+        </thead>
+
+        <tr ng-repeat="club in footballClubsList.data" ng-click="autocompleteFC(club.Id, club.Name, club.Country)">
+            <td>{{club.Id}}</td>
+            <td>{{club.Name}}</td>
+            <td>{{club.Country}}</td>
+        </tr>
+    </table>
+
+    <br /><br />
+
+    Enter Football Club ID: <input type="text" ng-model="deleteFCID" />
+    <button ng-click="delFC()">Delete</button>
+
+    <br /><br />
+</body>
+</html>

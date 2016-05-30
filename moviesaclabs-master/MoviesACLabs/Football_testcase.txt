@@ -1,0 +1,4 @@
+﻿Try the CRUD operations with:
+	- correct data to check if they work
+	- incorrect data (incorrect format) to see if there are any cases when they shouldn't work but they do
+	- missing data to see if they work if some data is missing because they're most likely not supposed to
